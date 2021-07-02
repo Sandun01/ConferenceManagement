@@ -14,6 +14,8 @@ from './routes/AdminRouteFunctions';
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Home from "./components/public/Home";
+import Timer from "./components/public/Timer";
+
 import AboutUs from "./components/public/AboutUs";
 
 import Login from "./components/public/Login";
@@ -89,7 +91,6 @@ import NotAuthorized from "./components/sessions/NotAuthorized";
 import TokenExpired from "./components/sessions/TokenExpired";
 
 import AuthService from "./services/AuthService";
-
 class App extends Component{
 
     constructor(props) {

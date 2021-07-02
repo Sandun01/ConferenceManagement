@@ -158,12 +158,12 @@ class Researches extends Component {
                                                     <Typography variant="h5" className="my-3">
                                                         RESEARCH TITLE: { (item.title+"").toUpperCase() }
                                                     </Typography>
-                                                    {/* <Typography variant="h6" className="my-1">
+                                                    <Typography variant="h6" className="my-1">
                                                         <b>Date: {item.date}</b>
                                                     </Typography>
                                                     <Typography variant="h6" className="my-1" >
                                                         <b>Time: {item.time}</b>
-                                                    </Typography> */}
+                                                    </Typography>
                                                     <Typography variant="h6" className="my-1">
                                                         <b>Description</b>: {item.description}
                                                     </Typography>

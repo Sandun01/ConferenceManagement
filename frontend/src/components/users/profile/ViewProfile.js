@@ -38,6 +38,7 @@ const styles = theme => ({
     },
     notificationCard:{
         backgroundColor:'#F5F5F5',
+        marginTop:'10px',
         '&:hover':{
             cursor: 'pointer',
             backgroundColor:'#EEF0F2',
@@ -60,26 +61,31 @@ class ViewProfile extends Component {
     }
 
     deleteNotification(id){
-        axios.delete('http://localhost:5000/api/notifications/'+id)
-        .then(res => {
-            window.location.reload(false);
-        })
-        .catch(error => {
-            console.log(error)
-        })
 
-        this.setState({
-            user:userData,
-        })
+        var result = confirm("You Want to delete?");
+        if (result) {
+            axios.delete('http://localhost:5000/api/notifications/'+id)
+            .then(res => {
+                window.location.reload(false);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    
+            this.setState({
+                user:userData,
+            })
+        }
+
     }
     
-    componentDidMount(){
+    async componentDidMount(){
 
         const user = AuthService.getUserData();
         const userData = user.userData;
         const id = user.userData.id;
 
-        axios.get('http://localhost:5000/api/notifications/user/'+id)
+        await axios.get('http://localhost:5000/api/notifications/user/'+id)
         .then(res => {
             var data = res.data.notifications;
 
@@ -95,6 +101,7 @@ class ViewProfile extends Component {
             user:userData,
         })
 
+        console.log(this.state);
     }
 
     render() {
@@ -159,9 +166,9 @@ class ViewProfile extends Component {
 
                                     { this.state.notifications.length > 0 ?
                                         
-                                        this.notifications.map((item) => (
+                                        this.state.notifications.map((item) => (
                                             
-                                        <Card className={classes.notificationCard}>
+                                        <Card className={classes.notificationCard} key={item._id}>
                                             <CardContent>
                                                 <Grid item xs={12} md={12} className={classes.cardItem}>
                                                     <Typography variant="h6" className="mt-1">
