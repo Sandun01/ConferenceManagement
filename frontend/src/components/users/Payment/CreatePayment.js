@@ -221,7 +221,7 @@ class CreatePayment extends Component {
             dialogBox: false,
         })
 
-        window.location.href = "/attendee/my";
+        window.location.reload(false);
     }
 
     setSelectedValue = (name, value) => {

@@ -1,7 +1,7 @@
 import User from '../models/userModel.js'
 import asyncHandler from 'express-async-handler'
 import generateToken  from '../utils/genarateToken.js'
-
+import jwt from 'jsonwebtoken'
 
 // @desc  Fetch validate the user credentials and then send a token
 // @route POST /api/users/login
@@ -91,39 +91,7 @@ const getUserAccount = asyncHandler(async (req, res) => {
       throw new Error('This user account cannot be created. Try again')
     }
   })
-  
-  // @desc  To Update user profile
-  // @route PUT /api/users/userAccount
-  // @access Private
-  
-  const updateUserAccount = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id)
-  
-    if (user) {
-      user.name = req.body.name || user.name
-      user.email = req.body.email || user.email
-      if (req.body.password) {
-        user.password = req.body.password
-      }
-  
-      const updatedUser = await user.save()
-  
-      res.json({
-        _id: updatedUser._id,
-        name: updatedUser.name,
-        email: updatedUser.email,
-        isAdmin: updatedUser.isAdmin,
-        token: genToken(updatedUser._id),
-      })
-  
-  
-    } else {
-      res.status(404)
-      throw new Error('User cannot be found')
-    }
-  })
-  
-  
+
   
   // @desc  Get request to all users
   // @route PUT /api/users
@@ -134,6 +102,47 @@ const getUserAccount = asyncHandler(async (req, res) => {
     res.json(users)
     
   })
+
+  const checkTokenExpiration = asyncHandler(async (req, res) => {
+
+    const JWTToken = req.body.token;
   
-  export {  getUserAccount, createUser, updateUserAccount, getUsers, authUser }
+    try{
+
+      var expTime = jwt.decode(JWTToken).exp;
+      var timeNow = Date.now() / 1000;
+      console.log(expTime, timeNow);
+
+      if(expTime > timeNow) {
+        
+          const decodedData = jwt.decode(JWTToken);
+          const user = await User.findById(decodedData.id);
+    
+          if (user) {
+            res.status(200).send({
+              "data": {
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                contact_no:user.contact_no,
+                user_type: user.user_type,
+                isAdmin: user.isAdmin,
+                token: JWTToken,
+              },
+              "token":JWTToken,
+            })
+          } 
+      }
+      else{
+        res.status(200).send({"message": "Expired"});
+      }
+      
+    }
+    catch(error){
+      res.status(500).send({"error": error.message});
+    }
+
+  })
+  
+  export {  getUserAccount, createUser, getUsers, authUser, checkTokenExpiration }
   

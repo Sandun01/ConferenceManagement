@@ -15,6 +15,7 @@ const styles = theme =>({
 
     table: {
         // minWidth: 650,
+        margin: 10,
     },
     editButtonIcon: {
         color:"#0625C8",
