@@ -3,6 +3,7 @@
  */
 // do not delete this comment
 
+import "regenerator-runtime/runtime";
 import React from "react";
 import ReactDOM from "react-dom";
 import Login from "../public/Login";

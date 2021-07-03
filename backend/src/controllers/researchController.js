@@ -206,9 +206,9 @@ const completePayment = async(req, res) => {
         const query = { "_id": req.params.id };
         const update = { 
             "is_Paid": true,
-            "payment": req.params.payment,
+            "payment": req.body.payment,
          };
-        
+
         await Research.updateOne( query , update)
         .then( result => {
             // console.log(result.modifiedCount);
