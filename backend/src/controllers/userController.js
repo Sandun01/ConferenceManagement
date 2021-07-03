@@ -111,7 +111,7 @@ const getUserAccount = asyncHandler(async (req, res) => {
 
       var expTime = jwt.decode(JWTToken).exp;
       var timeNow = Date.now() / 1000;
-      console.log(expTime, timeNow);
+      // console.log(expTime, timeNow);
 
       if(expTime > timeNow) {
         
