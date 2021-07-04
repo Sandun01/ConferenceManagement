@@ -126,7 +126,7 @@ class TemplateSingleView extends Component {
         var materialOne = {};
 
         //get data from db
-        await axios.get('http://localhost:5000/api/materials/'+id)
+        await axios.get('/api/materials/'+id)
         .then(res => {
             console.log(res);
             

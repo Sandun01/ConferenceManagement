@@ -55,7 +55,7 @@ class ViewPayment extends Component {
         var paymentOne = {};
 
         // get data from db
-        await axios.get('http://localhost:5000/api/payments/'+id)
+        await axios.get('/api/payments/'+id)
         .then(res => {
             console.log(res);
             

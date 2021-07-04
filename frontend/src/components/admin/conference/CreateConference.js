@@ -59,7 +59,7 @@ class CreateConference extends Component {
         var variantRes = null;
         var dialogBoxRes = true;
 
-        axios.post('http://localhost:5000/api/conferences', this.state.formData)
+        axios.post('/api/conferences', this.state.formData)
         .then(res => {
             // console.log(res);
             if(res.status == 201){

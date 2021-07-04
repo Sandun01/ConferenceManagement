@@ -92,7 +92,7 @@ class AdminWorkshops extends Component {
             var variantRes = '';
             var snackbarRes = true;
     
-            axios.delete('http://localhost:5000/api/Workshops/'+id)
+            axios.delete('/api/Workshops/'+id)
             .then(res => {
                 console.log(res);
                 if(res.status == 200){

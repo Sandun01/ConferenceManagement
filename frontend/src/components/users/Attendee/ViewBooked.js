@@ -64,7 +64,7 @@ class ViewBooked extends Component {
         var bookingOne = {};
 
         // get data from db
-        await axios.get('http://localhost:5000/api/bookings/'+id)
+        await axios.get('/api/bookings/'+id)
         .then(res => {
             console.log(res);
             

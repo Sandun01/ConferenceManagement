@@ -55,7 +55,7 @@ class Login extends Component {
         var messageRes = null;
         var variantRes = null;
 
-        axios.post('http://localhost:5000/api/users/login', this.state.formData)
+        axios.post('/api/users/login', this.state.formData)
         .then(res => {
             
             // console.log(res);

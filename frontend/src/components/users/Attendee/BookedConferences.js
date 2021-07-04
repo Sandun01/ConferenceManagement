@@ -92,7 +92,7 @@ class BookedConferences extends Component {
             var variantRes = '';
             var snackbarRes = true;
     
-            axios.delete('http://localhost:5000/api/bookings/'+id)
+            axios.delete('/api/bookings/'+id)
             .then(res => {
                 console.log(res);
                 if(res.status == 200){
@@ -139,7 +139,7 @@ class BookedConferences extends Component {
         var bookingArr = [];
 
         //get data from db
-        await axios.get('http://localhost:5000/api/bookings/user/'+id)
+        await axios.get('/api/bookings/user/'+id)
         .then(res => {
             console.log(res);
             

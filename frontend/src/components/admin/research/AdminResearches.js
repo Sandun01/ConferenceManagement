@@ -91,9 +91,9 @@ class AdminResearches extends Component {
             var variantRes = '';
             var snackbarRes = true;
     
-            axios.delete('http://localhost:5000/api/researches/'+id)
+            axios.delete('/api/researches/'+id)
             .then(res => {
-                console.log(res);
+                console.log(res);  
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
@@ -141,7 +141,7 @@ class AdminResearches extends Component {
         var researchArr = [];
 
         //get data from db
-        await axios.get('http://localhost:5000/api/researches')
+        await axios.get('/api/researches')
         .then(res => {
             console.log(res);
             

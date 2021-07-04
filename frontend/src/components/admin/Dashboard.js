@@ -54,7 +54,7 @@ class Dashboard extends Component {
         var snackbarRes = true;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/active')
+        await axios.get('/api/conferences/active')
             .then(res => {
                 console.log(res);
                 if(res.data.conference != null){
@@ -81,7 +81,7 @@ class Dashboard extends Component {
 
         if(cID != null){
             //get events from db
-            await axios.get('http://localhost:5000/api/events/conference/'+cID)
+            await axios.get('/api/events/conference/'+cID)
                 .then(res => {
                     console.log(res);
                     if(res.data.events != null){

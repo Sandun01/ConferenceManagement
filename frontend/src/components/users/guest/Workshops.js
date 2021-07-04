@@ -61,7 +61,7 @@ class Workshops extends Component {
         var snackbarRes = true;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/active')
+        await axios.get('/api/conferences/active')
         .then(res => {
             // console.log(res);
             if(res.data.conference != null){
@@ -88,7 +88,7 @@ class Workshops extends Component {
 
         if(cID != null){
             //get workshops from db
-            await axios.get('http://localhost:5000/api/workshops/public/'+cID)
+            await axios.get('/api/workshops/public/'+cID)
             .then(res => {
                 console.log(res);
                 if(res.data.workshops != null){

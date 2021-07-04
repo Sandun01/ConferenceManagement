@@ -62,7 +62,7 @@ class ViewProfile extends Component {
 
         var result = window.confirm("You Want to delete?");
         if (result) {
-            axios.delete('http://localhost:5000/api/notifications/'+id)
+            axios.delete('/api/notifications/'+id)
             .then(res => {
                 window.location.reload(false);
             })
@@ -79,7 +79,7 @@ class ViewProfile extends Component {
         const userData = user.userData;
         const id = user.userData.id;
 
-        await axios.get('http://localhost:5000/api/notifications/user/'+id)
+        await axios.get('/api/notifications/user/'+id)
         .then(res => {
             var data = res.data.notifications;
 

@@ -76,7 +76,7 @@ class CreateTemplate extends Component {
         var dialogBoxRes = false;
         var snackBarres = true;
 
-        axios.post('http://localhost:5000/api/materials', this.state.formData)
+        axios.post('/api/materials', this.state.formData)
         .then(res => {
             if(res.status == 201){
                 messageRes = res.data.message;
@@ -124,7 +124,7 @@ class CreateTemplate extends Component {
         var data = new FormData();
         data.append("attachment",this.state.attachments[0]);
 
-        axios.post('http://localhost:5000/api/files/uploadFile', data)
+        axios.post('/api/files/uploadFile', data)
         .then(res => {
             if(res.status == 200){
                 console.log(res);
@@ -257,7 +257,7 @@ class CreateTemplate extends Component {
         var data = this.state.formData;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/active')
+        await axios.get('/api/conferences/active')
         .then(res => {
             // console.log(res);
             if(res.status == 200){

@@ -69,7 +69,7 @@ class CreatePayment extends Component {
                 payment: payid,
             };
     
-            axios.put('http://localhost:5000/api/bookings/paid/'+this.state.id , data)
+            axios.put('/api/bookings/paid/'+this.state.id , data)
             .then(res => {
                 console.log(res);
                 if(res.status == 200){
@@ -116,7 +116,7 @@ class CreatePayment extends Component {
                 payment: payid,
             };
 
-            axios.put('http://localhost:5000/api/researches/paid/'+this.state.id , data)
+            axios.put('/api/researches/paid/'+this.state.id , data)
             .then(res => {
                 console.log("=====",res);
                 if(res.status == 201){
@@ -166,7 +166,7 @@ class CreatePayment extends Component {
         var variantRes = null;
         var dialogBoxRes = true;
 
-        axios.post('http://localhost:5000/api/payments', this.state.formData)
+        axios.post('/api/payments', this.state.formData)
         .then(res => {
             console.log(res);
             if(res.status == 201){

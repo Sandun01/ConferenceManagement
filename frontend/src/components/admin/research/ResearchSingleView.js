@@ -107,7 +107,7 @@ class ResearchSingleView extends Component {
             completed: res,
         };
         
-        await axios.put('http://localhost:5000/api/researches/complete/'+this.state.id, data)
+        await axios.put('/api/researches/complete/'+this.state.id, data)
         .then(res => {
             // console.log(res);
             
@@ -198,7 +198,7 @@ class ResearchSingleView extends Component {
         var variantRes = '';
         var snackbarRes = true;
 
-        await axios.put('http://localhost:5000/api/researches/approve/'+this.state.id,submitData)
+        await axios.put('/api/researches/approve/'+this.state.id,submitData)
         .then(res => {
             // console.log(res);
             
@@ -253,7 +253,7 @@ class ResearchSingleView extends Component {
         var variantRes = '';
         var snackbarRes = true;
 
-        await axios.post('http://localhost:5000/api/notifications',submitData)
+        await axios.post('/api/notifications',submitData)
         .then(res => {
             // console.log(res);
             
@@ -309,7 +309,7 @@ class ResearchSingleView extends Component {
         var variantRes = '';
         var snackbarRes = true;
 
-        await axios.post('http://localhost:5000/api/notifications',submitData)
+        await axios.post('/api/notifications',submitData)
         .then(res => {
             console.log(res);
             
@@ -377,7 +377,7 @@ class ResearchSingleView extends Component {
         var completedRes = false;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/researches/'+id)
+        await axios.get('/api/researches/'+id)
         .then(res => {
             console.log(res);
             

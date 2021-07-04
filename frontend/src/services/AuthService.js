@@ -33,7 +33,7 @@ import axios from 'axios';
 
             // console.log("user////",user);
 
-            axios.post('http://localhost:5000/api/users/profile/auth',data)
+            axios.post('/api/users/profile/auth',data)
             .then(res => {
                 // console.log(res);
                 // token expired

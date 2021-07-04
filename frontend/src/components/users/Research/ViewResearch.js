@@ -120,7 +120,7 @@ class ViewResearch extends Component {
         var title = '';
 
         //get data from db
-        await axios.get('http://localhost:5000/api/researches/'+id)
+        await axios.get('/api/researches/'+id)
         .then(res => {
             console.log(res);
             

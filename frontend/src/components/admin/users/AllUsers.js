@@ -68,7 +68,7 @@ class AllUsers extends Component {
 
     async componentDidMount(){
 
-        await axios.get('http://localhost:5000/api/users')
+        await axios.get('/api/users')
         .then(res =>{
             console.log(res);
             this.setState({

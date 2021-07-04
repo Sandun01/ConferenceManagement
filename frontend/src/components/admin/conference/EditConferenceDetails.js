@@ -64,7 +64,7 @@ class EditConferenceDetails extends Component {
         var variantRes = null;
         var dialogBoxRes = true;
 
-        axios.put('http://localhost:5000/api/conferences/'+this.state.id, this.state.formData)
+        axios.put('/api/conferences/'+this.state.id, this.state.formData)
         .then(res => {
             if(res.status == 200){
                 if(res.data.success){
@@ -124,7 +124,7 @@ class EditConferenceDetails extends Component {
         var variantRes = '';
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/'+cId)
+        await axios.get('/api/conferences/'+cId)
         .then(res => {
             console.log(res);
             if(res.status == 200){

@@ -92,7 +92,7 @@ class MyWorkshops extends Component {
             var variantRes = '';
             var snackbarRes = true;
     
-            axios.delete('http://localhost:5000/api/Workshops/'+id)
+            axios.delete('/api/Workshops/'+id)
             .then(res => {
                 console.log(res);
                 if(res.status == 200){
@@ -137,7 +137,7 @@ class MyWorkshops extends Component {
         var workshopsArr = [];
 
         //get data from db
-        await axios.get('http://localhost:5000/api/workshops/user/'+id)
+        await axios.get('/api/workshops/user/'+id)
         .then(res => {
             console.log(res);
             

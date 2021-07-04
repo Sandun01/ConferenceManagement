@@ -66,7 +66,7 @@ class CreateBookConference extends Component {
         var variantRes = null;
         var dialogBoxRes = true;
 
-        axios.post('http://localhost:5000/api/bookings', this.state.formData)
+        axios.post('/api/bookings', this.state.formData)
         .then(res => {
             console.log(res);
             if(res.status == 201){
@@ -143,7 +143,7 @@ class CreateBookConference extends Component {
         var data = this.state.formData;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/active')
+        await axios.get('/api/conferences/active')
         .then(res => {
             console.log(res);
             if(res.status == 200){

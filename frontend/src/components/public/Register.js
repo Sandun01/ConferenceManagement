@@ -59,7 +59,7 @@ class Register extends Component {
         var messageRes = null;
         var variantRes = null;
 
-        axios.post('http://localhost:5000/api/users', this.state.formData)
+        axios.post('/api/users', this.state.formData)
         .then(res => {
             if(res.status == 201){
                 messageRes = "Successfully Registered!";

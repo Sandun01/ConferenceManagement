@@ -74,7 +74,7 @@ class EditEvent extends Component {
         var variantRes = null;
         var dialogBoxRes = true;
 
-        axios.put('http://localhost:5000/api/events/'+this.state.id, this.state.formData)
+        axios.put('/api/events/'+this.state.id, this.state.formData)
         .then(res => {
             if(res.status == 200){
                 if(res.data.success){
@@ -149,7 +149,7 @@ class EditEvent extends Component {
         var snackbarRes = true;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/events/'+eId)
+        await axios.get('/api/events/'+eId)
         .then(res => {
             console.log(res);
             if(res.status == 200){

@@ -90,7 +90,7 @@ class ConferenceEvents extends Component {
             var variantRes = '';
             var resSnackbar = true;
     
-            axios.delete('http://localhost:5000/api/events/'+id)
+            axios.delete('/api/events/'+id)
             .then(res => {
                 console.log(res);
                 if(res.status == 200){
@@ -136,7 +136,7 @@ class ConferenceEvents extends Component {
         var snackbarRes = true;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/events')
+        await axios.get('/api/events')
         .then(res => {
             console.log(res);
             

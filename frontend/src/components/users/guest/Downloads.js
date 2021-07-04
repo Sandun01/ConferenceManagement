@@ -61,7 +61,7 @@ class Downloads extends Component {
         var snackbarRes = true;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/active')
+        await axios.get('/api/conferences/active')
         .then(res => {
             // console.log(res);
             if(res.data.conference != null){
@@ -88,7 +88,7 @@ class Downloads extends Component {
 
         if(cID != null){
             //get materials from db
-            await axios.get('http://localhost:5000/api/materials/conference/'+cID)
+            await axios.get('/api/materials/conference/'+cID)
             .then(res => {
                 console.log(res);
                 if(res.data.materials != null){

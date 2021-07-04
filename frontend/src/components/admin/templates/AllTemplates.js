@@ -87,7 +87,7 @@ class AllTemplates extends Component {
             var variantRes = '';
             var snackbarRes = true;
     
-            axios.delete('http://localhost:5000/api/materials/'+id)
+            axios.delete('/api/materials/'+id)
             .then(res => {
                 console.log(res);
                 if(res.status == 200){
@@ -133,7 +133,7 @@ class AllTemplates extends Component {
         var templatesArr = [];
 
         //get data from db
-        await axios.get('http://localhost:5000/api/materials')
+        await axios.get('/api/materials')
         .then(res => {
             console.log(res);
             

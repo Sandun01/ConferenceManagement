@@ -70,7 +70,7 @@ class CreateEvent extends Component {
         var variantRes = null;
         var dialogBoxRes = true;
 
-        axios.post('http://localhost:5000/api/events', this.state.formData)
+        axios.post('/api/events', this.state.formData)
         .then(res => {
             
             if(res.status == 201){
@@ -144,7 +144,7 @@ class CreateEvent extends Component {
         var conferenceArr = [];
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/active')
+        await axios.get('/api/conferences/active')
         .then(res => {
             console.log(res);
             if(res.status == 200){

@@ -135,7 +135,7 @@ class WorkshopSingleView extends Component {
         var variantRes = '';
         var snackbarRes = true;
 
-        await axios.put('http://localhost:5000/api/workshops/approve/'+this.state.id,submitData)
+        await axios.put('/api/workshops/approve/'+this.state.id,submitData)
         .then(res => {
             // console.log(res);
             
@@ -190,7 +190,7 @@ class WorkshopSingleView extends Component {
         var variantRes = '';
         var snackbarRes = true;
 
-        await axios.post('http://localhost:5000/api/notifications',submitData)
+        await axios.post('/api/notifications',submitData)
         .then(res => {
             // console.log(res);
             
@@ -247,7 +247,7 @@ class WorkshopSingleView extends Component {
         var variantRes = '';
         var snackbarRes = true;
 
-        await axios.post('http://localhost:5000/api/notifications',submitData)
+        await axios.post('/api/notifications',submitData)
         .then(res => {
             console.log(res);
             
@@ -315,7 +315,7 @@ class WorkshopSingleView extends Component {
         var title = '';
 
         //get data from db
-        await axios.get('http://localhost:5000/api/workshops/'+id)
+        await axios.get('/api/workshops/'+id)
         .then(res => {
             console.log(res);
             

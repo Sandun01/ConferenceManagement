@@ -117,7 +117,7 @@ class ViewWorkshop extends Component {
         var title = '';
 
         //get data from db
-        await axios.get('http://localhost:5000/api/workshops/'+id)
+        await axios.get('/api/workshops/'+id)
         .then(res => {
             console.log(res);
             

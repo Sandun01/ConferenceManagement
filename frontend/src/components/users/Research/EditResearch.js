@@ -67,7 +67,7 @@ class EditResearch extends Component {
         var variantRes = null;
         var dialogBoxRes = true;
 
-        axios.put('http://localhost:5000/api/researches/'+this.state.id, this.state.formData)
+        axios.put('/api/researches/'+this.state.id, this.state.formData)
         .then(res => {
             if(res.status == 200){
                 if(res.data.success){
@@ -106,7 +106,7 @@ class EditResearch extends Component {
         var wId = id;
         var data = {};
 
-        await axios.get('http://localhost:5000/api/researches/'+wId)
+        await axios.get('/api/researches/'+wId)
         .then(res => {
             console.log(res);
             if(res.status == 200){

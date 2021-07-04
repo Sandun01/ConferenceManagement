@@ -78,7 +78,7 @@ class AllConferences extends Component {
             var variantRes = '';
             var snackbarRes = true;
     
-            axios.delete('http://localhost:5000/api/conferences/'+id)
+            axios.delete('/api/conferences/'+id)
             .then(res => {
                 console.log(res);
                 if(res.status == 200){
@@ -125,7 +125,7 @@ class AllConferences extends Component {
         var snackbarRes = true;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences')
+        await axios.get('/api/conferences')
         .then(res => {
             // console.log(res);
             

@@ -62,7 +62,7 @@ class ConferenceSingleView extends Component {
             active: activeStatus,
         }
 
-        await axios.put('http://localhost:5000/api/conferences/active/'+this.state.id, data)
+        await axios.put('/api/conferences/active/'+this.state.id, data)
         .then(res => {
             console.log(res);
             if(res.status == 200){
@@ -110,7 +110,7 @@ class ConferenceSingleView extends Component {
         var cId = this.props.match.params.id;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/conferences/'+cId)
+        await axios.get('/api/conferences/'+cId)
         .then(res => {
             console.log(res);
             if(res.status == 200){

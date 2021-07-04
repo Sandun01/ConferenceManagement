@@ -61,7 +61,7 @@ class EventSingleView extends Component {
             is_Approved: approved_status,
         }
 
-        await axios.put('http://localhost:5000/api/events/approve/'+this.state.id, data)
+        await axios.put('/api/events/approve/'+this.state.id, data)
         .then(res => {
             console.log(res);
             if(res.status == 200){
@@ -117,7 +117,7 @@ class EventSingleView extends Component {
         var eId = this.props.match.params.id;
 
         //get data from db
-        await axios.get('http://localhost:5000/api/events/'+eId)
+        await axios.get('/api/events/'+eId)
         .then(res => {
             console.log(res);
             if(res.status == 200){
