@@ -138,7 +138,7 @@ class AdminWorkshops extends Component {
         var workshopsArr = [];
 
         //get data from db
-        await axios.get('http://localhost:5000/api/workshops/')
+        await axios.get('/api/workshops/')
         .then(res => {
             console.log(res);
             
