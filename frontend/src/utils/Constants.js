@@ -28,4 +28,4 @@ export const adminUserTypes = [
     },
 ];
 
-export const attachmentURL = "/"
+export const attachmentURL = "http://127.0.0.1:5000/"
