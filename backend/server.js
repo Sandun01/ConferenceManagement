@@ -40,7 +40,7 @@ app.use('/api/materials', downloadableRoutes)
 
 app.use('/api/files/', fileUploadController)
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 5000;
 
 const __dirname = path.resolve()
 

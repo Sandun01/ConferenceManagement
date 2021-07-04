@@ -2,6 +2,7 @@
   "name": "conference_management",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:5000",
   "author": "2021S1_REG_WE_38",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

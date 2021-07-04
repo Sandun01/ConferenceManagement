@@ -71,7 +71,7 @@ class Home extends Component {
 
   async componentDidMount(){
 
-    await axios.get('http://localhost:5000/api/conferences/active')
+    await axios.get('/api/conferences/active')
       .then(res => {
         console.log(res)
 
