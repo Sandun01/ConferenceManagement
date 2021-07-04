@@ -28,3 +28,4 @@ export const adminUserTypes = [
     },
 ];
 
+export const attachmentURL = "https://icaf-conference-management.herokuapp.com/uploads/"

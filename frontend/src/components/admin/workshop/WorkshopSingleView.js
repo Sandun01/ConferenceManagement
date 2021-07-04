@@ -13,6 +13,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import AuthService from '../../../services/AuthService';
 import { Alert } from '@material-ui/lab';
 import axios from 'axios';
+import { attachmentURL } from '../../../utils/Constants';
 
 const styles = theme =>({
 
@@ -281,7 +282,7 @@ class WorkshopSingleView extends Component {
     }
 
     openAttachment(attachment){
-        window.open("http://localhost:5000/"+attachment , '_blank');
+        window.open(attachmentURL+attachment , '_blank');
     }
 
     handleChange = (e) => {

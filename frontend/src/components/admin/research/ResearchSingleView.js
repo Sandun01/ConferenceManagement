@@ -14,6 +14,7 @@ import AuthService from '../../../services/AuthService';
 
 import axios from 'axios';
 import { Alert } from '@material-ui/lab';
+import { attachmentURL } from '../../../utils/Constants';
 
 const styles = theme =>({
 
@@ -356,7 +357,7 @@ class ResearchSingleView extends Component {
     }
 
     openAttachment(attachment){
-        window.open("http://localhost:5000/"+attachment , '_blank');
+        window.open(attachmentURL+attachment , '_blank');
     }
 
     async componentDidMount(){

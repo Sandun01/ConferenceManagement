@@ -6,6 +6,7 @@ from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 import axios from 'axios';
 import { Alert } from '@material-ui/lab';
+import { attachmentURL } from '../../../utils/Constants';
 
 const styles = theme =>({
 
@@ -48,7 +49,7 @@ class Downloads extends Component {
     }
     
     openAttachment(attachment){
-        window.open("http://localhost:5000/"+attachment , '_blank');
+        window.open(attachmentURL+attachment , '_blank');
     }
 
     async componentDidMount(){
