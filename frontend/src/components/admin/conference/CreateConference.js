@@ -54,7 +54,7 @@ class CreateConference extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = true;

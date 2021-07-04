@@ -80,7 +80,7 @@ class AllConferences extends Component {
     
             axios.delete('/api/conferences/'+id)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
@@ -97,7 +97,7 @@ class AllConferences extends Component {
                 }
             })
             .catch(error => {
-                console.log("Error:",error);
+                //console.log("Error:",error);
                 variantRes = "error";
                 messageRes = error;
             })

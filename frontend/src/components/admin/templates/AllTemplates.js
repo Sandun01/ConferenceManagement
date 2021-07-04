@@ -88,7 +88,7 @@ class AllTemplates extends Component {
 
         axios.post('/api/files/deleteFile', { "filepath": path })
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 snackbarRes = false;
                 window.location.reload(false);
@@ -122,7 +122,7 @@ class AllTemplates extends Component {
     
             axios.delete('/api/materials/'+id)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
@@ -169,7 +169,7 @@ class AllTemplates extends Component {
         //get data from db
         await axios.get('/api/materials')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){

@@ -69,7 +69,7 @@ class EditEvent extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = true;
@@ -137,7 +137,7 @@ class EditEvent extends Component {
             formData: data,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
 
     }
 
@@ -151,7 +151,7 @@ class EditEvent extends Component {
         //get data from db
         await axios.get('/api/events/'+eId)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     variantRes = "success";

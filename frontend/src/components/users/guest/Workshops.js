@@ -90,7 +90,7 @@ class Workshops extends Component {
             //get workshops from db
             await axios.get('/api/workshops/public/'+cID)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.data.workshops != null){
                     if(res.data.success){
                         snackbarRes = false;

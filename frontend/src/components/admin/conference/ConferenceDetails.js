@@ -56,7 +56,7 @@ class ConferenceDetails extends Component {
         //get data from db
         await axios.get('/api/conferences/active')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.data.conference != null){
                 if(res.data.success){
                     snackbarRes = false;
@@ -83,7 +83,7 @@ class ConferenceDetails extends Component {
             //get events from db
             await axios.get('/api/events/conference/'+cID)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.data.events != null){
                     if(res.data.success){
                         snackbarRes = false;

@@ -63,7 +63,7 @@ class EventSingleView extends Component {
 
         await axios.put('/api/events/approve/'+this.state.id, data)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     variantRes = "success";
@@ -119,7 +119,7 @@ class EventSingleView extends Component {
         //get data from db
         await axios.get('/api/events/'+eId)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     variantRes = "success";

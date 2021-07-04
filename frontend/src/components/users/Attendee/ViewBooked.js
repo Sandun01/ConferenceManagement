@@ -66,7 +66,7 @@ class ViewBooked extends Component {
         // get data from db
         await axios.get('/api/bookings/'+id)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){

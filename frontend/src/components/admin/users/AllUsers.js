@@ -70,7 +70,7 @@ class AllUsers extends Component {
 
         await axios.get('/api/users')
         .then(res =>{
-            console.log(res);
+            //console.log(res);
             this.setState({
                 users: res.data,
             })

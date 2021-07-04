@@ -95,7 +95,7 @@ class ViewProfile extends Component {
             user:userData,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
     }
 
     render() {

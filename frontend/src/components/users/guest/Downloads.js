@@ -91,7 +91,7 @@ class Downloads extends Component {
             //get materials from db
             await axios.get('/api/materials/conference/'+cID)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.data.materials != null){
                     if(res.data.success){
                         snackbarRes = false;

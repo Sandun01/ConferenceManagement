@@ -65,7 +65,7 @@ class CreateWorkshop extends Component {
     }
 
     uploadData(){
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = false;
@@ -122,7 +122,7 @@ class CreateWorkshop extends Component {
         axios.post('/api/files/uploadFile', data)
         .then(res => {
             if(res.status == 200){
-                console.log(res);
+                //console.log(res);
                 fileUrl = res.data.path.replace(/\\/g, "/");
                 // console.log("FIle:",fileUrl);
                 
@@ -239,7 +239,7 @@ class CreateWorkshop extends Component {
             noOfFiles: no_files,
         })
 
-        console.log(this.state.formData);
+        //console.log(this.state.formData);
     };
 
     
@@ -260,7 +260,7 @@ class CreateWorkshop extends Component {
         //get data from db
         await axios.get('/api/conferences/active')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     conferenceOne = res.data.conference;
@@ -278,7 +278,7 @@ class CreateWorkshop extends Component {
             conferences: conferenceArr,
             formData:data,
         })
-        console.log(this.state)
+        //console.log(this.state)
     }
 
     componentDidMount(){
@@ -317,7 +317,7 @@ class CreateWorkshop extends Component {
 
                     { this.state.isLargeScreen && 
                         <Grid item xs={12} md={6}>
-                            <img src={"images/workshopImage.jpg"} alt="" width="100%" height="550"/>
+                            <img src={"/images/workshopImage.jpg"} alt="" width="100%" height="550"/>
                         </Grid>
                     }
 

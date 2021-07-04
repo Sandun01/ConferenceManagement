@@ -193,7 +193,7 @@ class ResearchSingleView extends Component {
             is_Approved: true,
         };
         
-        console.log("a",submitData);
+        //console.log("a",submitData);
 
         var messageRes = '';
         var variantRes = '';
@@ -304,7 +304,7 @@ class ResearchSingleView extends Component {
             user: this.state.createdBy._id,
         };
         
-        console.log("s",submitData);
+        //console.log("s",submitData);
 
         var messageRes = '';
         var variantRes = '';
@@ -312,7 +312,7 @@ class ResearchSingleView extends Component {
 
         await axios.post('/api/notifications',submitData)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 201){
                 if(res.data.success){
@@ -380,7 +380,7 @@ class ResearchSingleView extends Component {
         //get data from db
         await axios.get('/api/researches/'+id)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){
@@ -420,7 +420,7 @@ class ResearchSingleView extends Component {
             completed: completedRes,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
 
     }
 

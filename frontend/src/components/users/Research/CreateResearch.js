@@ -64,7 +64,7 @@ class CreateResearch extends Component {
     }
 
     uploadData(){
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = false;
@@ -84,7 +84,7 @@ class CreateResearch extends Component {
             }
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
             messageRes = error.message;
             variantRes = "error";
         })
@@ -108,7 +108,7 @@ class CreateResearch extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var fileUrl = '';
@@ -121,7 +121,7 @@ class CreateResearch extends Component {
         axios.post('/api/files/uploadFile', data)
         .then(res => {
             if(res.status == 200){
-                console.log(res);
+                //console.log(res);
                 fileUrl = res.data.path.replace(/\\/g, "/");
                 // console.log("FIle:",fileUrl);
                 
@@ -238,7 +238,7 @@ class CreateResearch extends Component {
             noOfFiles: no_files,
         })
 
-        console.log(this.state.formData);
+        //console.log(this.state.formData);
     };
 
     
@@ -259,7 +259,7 @@ class CreateResearch extends Component {
         //get data from db
         await axios.get('/api/conferences/active')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     conferenceOne = res.data.conference;

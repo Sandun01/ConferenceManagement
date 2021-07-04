@@ -92,7 +92,7 @@ class AdminResearches extends Component {
 
         axios.post('/api/files/deleteFile', { "filepath": path })
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 snackbarRes = false;
                 window.location.reload(false);
@@ -126,7 +126,7 @@ class AdminResearches extends Component {
     
             axios.delete('/api/researches/'+id)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
@@ -177,7 +177,7 @@ class AdminResearches extends Component {
         //get data from db
         await axios.get('/api/researches')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){

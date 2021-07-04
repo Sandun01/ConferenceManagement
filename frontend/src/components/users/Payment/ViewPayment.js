@@ -57,7 +57,7 @@ class ViewPayment extends Component {
         // get data from db
         await axios.get('/api/payments/'+id)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){

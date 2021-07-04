@@ -64,7 +64,7 @@ class ConferenceSingleView extends Component {
 
         await axios.put('/api/conferences/active/'+this.state.id, data)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     variantRes = "success";
@@ -112,7 +112,7 @@ class ConferenceSingleView extends Component {
         //get data from db
         await axios.get('/api/conferences/'+cId)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     variantRes = "success";

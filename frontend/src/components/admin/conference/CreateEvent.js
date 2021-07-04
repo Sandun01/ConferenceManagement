@@ -65,7 +65,7 @@ class CreateEvent extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = true;
@@ -146,7 +146,7 @@ class CreateEvent extends Component {
         //get data from db
         await axios.get('/api/conferences/active')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     conferenceOne = res.data.conference;

@@ -94,7 +94,7 @@ class BookedConferences extends Component {
     
             axios.delete('/api/bookings/'+id)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
@@ -141,7 +141,7 @@ class BookedConferences extends Component {
         //get data from db
         await axios.get('/api/bookings/user/'+id)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){

@@ -55,7 +55,7 @@ class CreateAdmin extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
 
@@ -70,7 +70,7 @@ class CreateAdmin extends Component {
                 }, 1000)
             }
             else{
-                console.log(res)
+                //console.log(res)
                 messageRes = res.error;
                 variantRes = "error";
             }

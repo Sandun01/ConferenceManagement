@@ -70,7 +70,7 @@ class CreateTemplate extends Component {
     }
 
     uploadData(){
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = false;
@@ -127,7 +127,7 @@ class CreateTemplate extends Component {
         axios.post('/api/files/uploadFile', data)
         .then(res => {
             if(res.status == 200){
-                console.log(res);
+                //console.log(res);
                 fileUrl = res.data.path.replace(/\\/g, "/");
                 // console.log("FIle:",fileUrl);
                 
@@ -242,7 +242,7 @@ class CreateTemplate extends Component {
             noOfFiles: no,
         })
 
-        console.log(this.state.formData);
+        //console.log(this.state.formData);
     };
 
     closeSnackBar = (event, response) => {

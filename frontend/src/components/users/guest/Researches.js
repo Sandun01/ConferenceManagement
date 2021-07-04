@@ -90,7 +90,7 @@ class Researches extends Component {
             //get researches from db
             await axios.get('/api/researches/public/'+cID)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.data.researches != null){
                     if(res.data.success){
                         snackbarRes = false;

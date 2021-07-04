@@ -60,7 +60,7 @@ class EditWorkshop extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = true;
@@ -140,7 +140,7 @@ class EditWorkshop extends Component {
 
         await axios.get('/api/workshops/'+wId)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     data = res.data.workshop;

@@ -91,7 +91,7 @@ class MyResearch extends Component {
 
         axios.post('/api/files/deleteFile', { "filepath": path })
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 snackbarRes = false;
                 window.location.reload(false);
@@ -125,7 +125,7 @@ class MyResearch extends Component {
     
             axios.delete('/api/researches/'+id)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
@@ -171,7 +171,7 @@ class MyResearch extends Component {
         //get data from db
         await axios.get('/api/researches/user/'+id)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){

@@ -62,7 +62,7 @@ class EditResearch extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = true;
@@ -108,7 +108,7 @@ class EditResearch extends Component {
 
         await axios.get('/api/researches/'+wId)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     data = res.data.research;

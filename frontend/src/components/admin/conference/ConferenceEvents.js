@@ -92,7 +92,7 @@ class ConferenceEvents extends Component {
     
             axios.delete('/api/events/'+id)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         resSnackbar = false;
@@ -138,7 +138,7 @@ class ConferenceEvents extends Component {
         //get data from db
         await axios.get('/api/events')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){

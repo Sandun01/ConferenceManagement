@@ -73,7 +73,7 @@ class Home extends Component {
 
     await axios.get('/api/conferences/active')
       .then(res => {
-        console.log(res)
+        //console.log(res)
 
         this.setDateTime(res.data.conference.startDate);
         

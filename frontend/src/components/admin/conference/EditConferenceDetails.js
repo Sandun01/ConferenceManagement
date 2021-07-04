@@ -59,7 +59,7 @@ class EditConferenceDetails extends Component {
             loading: true,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
         var messageRes = null;
         var variantRes = null;
         var dialogBoxRes = true;
@@ -126,7 +126,7 @@ class EditConferenceDetails extends Component {
         //get data from db
         await axios.get('/api/conferences/'+cId)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 if(res.data.success){
                     messageRes = res.data.message;

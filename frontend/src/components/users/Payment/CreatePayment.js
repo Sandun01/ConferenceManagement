@@ -71,7 +71,7 @@ class CreatePayment extends Component {
     
             axios.put('/api/bookings/paid/'+this.state.id , data)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         messageRes = res.data.message;
@@ -118,7 +118,7 @@ class CreatePayment extends Component {
 
             axios.put('/api/researches/paid/'+this.state.id , data)
             .then(res => {
-                console.log("=====",res);
+                //console.log("=====",res);
                 if(res.status == 201){
                     if(res.data.success){
                         messageRes = res.data.message;
@@ -168,7 +168,7 @@ class CreatePayment extends Component {
 
         axios.post('/api/payments', this.state.formData)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 201){
                 if(res.data.success){
                     messageRes = res.data.message;
@@ -236,7 +236,7 @@ class CreatePayment extends Component {
             formData: data,
         })
 
-        console.log(this.state);
+        //console.log(this.state);
 
     }
 
@@ -247,7 +247,7 @@ class CreatePayment extends Component {
         var amount = 0;
         var typeRefName = null;
         var data = this.state.formData;
-        console.log(details)
+        //console.log(details)
 
         if(details.token != null){
             d_type = "Booking";

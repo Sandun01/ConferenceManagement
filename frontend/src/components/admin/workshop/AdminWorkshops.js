@@ -92,7 +92,7 @@ class AdminWorkshops extends Component {
 
         axios.post('/api/files/deleteFile', { "filepath": path })
         .then(res => {
-            console.log(res);
+            //console.log(res);
             if(res.status == 200){
                 snackbarRes = false;
                 window.location.reload(false);
@@ -126,7 +126,7 @@ class AdminWorkshops extends Component {
     
             axios.delete('/api/Workshops/'+id)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
@@ -173,7 +173,7 @@ class AdminWorkshops extends Component {
         //get data from db
         await axios.get('/api/workshops/')
         .then(res => {
-            console.log(res);
+            //console.log(res);
             
             if(res.status == 200){
                 if(res.data.success){
