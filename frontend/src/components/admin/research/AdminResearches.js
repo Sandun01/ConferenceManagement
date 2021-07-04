@@ -75,6 +75,7 @@ class AdminResearches extends Component {
         this.state = initialState;
         this.deleteResearch = this.deleteResearch.bind(this);
         this.closeSnackBar = this.closeSnackBar.bind(this);
+        this.deleteFile = this.deleteFile.bind(this);
     }
 
     closeSnackBar = (event, response) => {
@@ -83,7 +84,39 @@ class AdminResearches extends Component {
         })
     }
 
-    deleteResearch(id){
+    deleteFile(path){
+
+        var messageRes = '';
+        var variantRes = '';
+        var snackbarRes = true;
+
+        axios.post('/api/files/deleteFile', { "filepath": path })
+        .then(res => {
+            console.log(res);
+            if(res.status == 200){
+                snackbarRes = false;
+                window.location.reload(false);
+            }
+            else{
+                messageRes = res.data.message;
+                variantRes = "error";
+            }
+        })
+        .catch(error => {
+            console.log("Error:",error);
+            variantRes = "error";
+            messageRes = error;
+        })
+        
+        this.setState({
+            message: messageRes,
+            variant: variantRes,
+            snackbar: snackbarRes,
+        })
+
+    }
+
+    deleteResearch(id, path){
         var result = window.confirm("Are Sure You Want to delete?");
 
         if(result){
@@ -93,11 +126,12 @@ class AdminResearches extends Component {
     
             axios.delete('/api/researches/'+id)
             .then(res => {
-                console.log(res);  
+                console.log(res);
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
-                        window.location.reload(false);
+                        // window.location.reload(false);
+                        this.deleteFile(path);
                     }
                     else{
                         messageRes = res.data.message;
@@ -232,7 +266,7 @@ class AdminResearches extends Component {
                                                     <Tooltip title="Delete" arrow>
                                                         <DeleteIcon 
                                                             className={classes.deleteButtonIcon}
-                                                            onClick={() => this.deleteResearch(row._id)}
+                                                            onClick={() => this.deleteResearch(row._id,row.attachment)}
                                                             ></DeleteIcon>
                                                     </Tooltip>
                                                 </>

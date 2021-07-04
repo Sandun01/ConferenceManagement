@@ -75,6 +75,7 @@ class AdminWorkshops extends Component {
         this.state = initialState;
         this.closeSnackBar = this.closeSnackBar.bind(this);
         this.deleteWorkshop = this.deleteWorkshop.bind(this);
+        this.deleteFile = this.deleteFile.bind(this);
     }
 
     closeSnackBar = (event, response) => {
@@ -83,8 +84,39 @@ class AdminWorkshops extends Component {
         })
     }
 
-    deleteWorkshop(id){
+    deleteFile(path){
 
+        var messageRes = '';
+        var variantRes = '';
+        var snackbarRes = true;
+
+        axios.post('/api/files/deleteFile', { "filepath": path })
+        .then(res => {
+            console.log(res);
+            if(res.status == 200){
+                snackbarRes = false;
+                window.location.reload(false);
+            }
+            else{
+                messageRes = res.data.message;
+                variantRes = "error";
+            }
+        })
+        .catch(error => {
+            console.log("Error:",error);
+            variantRes = "error";
+            messageRes = error;
+        })
+        
+        this.setState({
+            message: messageRes,
+            variant: variantRes,
+            snackbar: snackbarRes,
+        })
+
+    }
+
+    deleteWorkshop(id, path){
         var result = window.confirm("Are Sure You Want to delete?");
 
         if(result){
@@ -98,7 +130,8 @@ class AdminWorkshops extends Component {
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
-                        window.location.reload(false);
+                        // window.location.reload(false);
+                        this.deleteFile(path);
                     }
                     else{
                         messageRes = res.data.message;
@@ -229,7 +262,7 @@ class AdminWorkshops extends Component {
                                                 <Tooltip title="Delete" arrow>
                                                     <DeleteIcon 
                                                         className={classes.deleteButtonIcon}
-                                                        onClick={ () => this.deleteWorkshop(row._id)}
+                                                        onClick={() => this.deleteWorkshop(row._id,row.attachment)}
                                                     ></DeleteIcon>
                                                 </Tooltip>
                                             </>

@@ -77,9 +77,42 @@ class AllTemplates extends Component {
         super(props);
         this.state = initialState;
         this.deleteTemplate = this.deleteTemplate.bind(this);
+        this.deleteFile = this.deleteFile.bind(this);
     }
 
-    deleteTemplate(id){
+    deleteFile(path){
+
+        var messageRes = '';
+        var variantRes = '';
+        var snackbarRes = true;
+
+        axios.post('/api/files/deleteFile', { "filepath": path })
+        .then(res => {
+            console.log(res);
+            if(res.status == 200){
+                snackbarRes = false;
+                window.location.reload(false);
+            }
+            else{
+                messageRes = res.data.message;
+                variantRes = "error";
+            }
+        })
+        .catch(error => {
+            console.log("Error:",error);
+            variantRes = "error";
+            messageRes = error;
+        })
+        
+        this.setState({
+            message: messageRes,
+            variant: variantRes,
+            snackbar: snackbarRes,
+        })
+
+    }
+
+    deleteTemplate(id, path){
         var result = window.confirm("Are Sure You Want to delete?");
 
         if(result){
@@ -93,7 +126,8 @@ class AllTemplates extends Component {
                 if(res.status == 200){
                     if(res.data.success){
                         snackbarRes = false;
-                        window.location.reload(false);
+                        // window.location.reload(false);
+                        this.deleteFile(path);
                     }
                     else{
                         messageRes = res.data.message;
@@ -230,7 +264,7 @@ class AllTemplates extends Component {
                                             </Tooltip> */}
                                             <Tooltip title="Delete" arrow>
                                                 <DeleteIcon className={classes.deleteButtonIcon}
-                                                    onClick={() => this.deleteTemplate(row._id)}    
+                                                    onClick={() => this.deleteTemplate(row._id, row.attachment)}    
                                                 ></DeleteIcon>
                                             </Tooltip>
                                         </TableCell>

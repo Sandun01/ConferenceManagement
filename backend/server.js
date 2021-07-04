@@ -22,10 +22,6 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
-//set upload folder
-app.use(express.static('/uploads/'));
-app.use('/uploads', express.static('uploads'));
-
 //directing api calls to relavent routes
 app.use('/api/users', userRoute)
 app.use('/api/conferences', conferenceRoutes)
@@ -40,9 +36,13 @@ app.use('/api/materials', downloadableRoutes)
 
 app.use('/api/files/', fileUploadController)
 
-const PORT = process.env.PORT || 5000;
 
 const __dirname = path.resolve()
+//set upload folder
+app.use(express.static('/uploads/'));
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
+
+const PORT = process.env.PORT || 5000;
 
 if(process.env.NODE_ENV === 'production'){
 

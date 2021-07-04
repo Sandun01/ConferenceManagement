@@ -1,5 +1,7 @@
 import multer from "multer";
 import express from 'express';
+import fs from 'fs';
+import { promisify } from 'util';
 
 const router = express.Router()
 
@@ -22,6 +24,20 @@ router.post('/uploadFile', upload.single("attachment"), (req, res) => {
     // console.log(req.file);
     var path = req.file.path;
     res.status(200).send({ "path": path })
+});  
+
+router.post('/deleteFile', (req, res) => {
+    
+    fs.unlink(req.body.filepath, (error) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send({ "error": error })
+        }
+        else{
+            res.status(200).send({ "success": "delete success" })
+        }
+    });
+
 });  
 
 
