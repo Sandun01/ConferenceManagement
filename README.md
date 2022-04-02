@@ -18,11 +18,15 @@ Link: https://icaf-conference-management.herokuapp.com/
 
 ## Logo
 
-<img src="frontend/public/images/logo.png">
+<img src="frontend/public/images/logo.png" height="200px" width="200px">
 <hr>
 
 ## User Interfaces
 
 ### Home Page
 <img src="project_documents/gifs/1.gif">
+
+### Other Public Pages
+<img src="project_documents/gifs/2.gif">
+
 <hr>
