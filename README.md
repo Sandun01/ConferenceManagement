@@ -3,8 +3,8 @@
 Author: 2021S1_REG_WE_38<br>
 Technology: MERN<br>
 
-Report
-Link: https://github.com/Sandun01/ICAF-Conference_Management_System/blob/dev/2021S1_REG_WE_38%20.pdf
+Preview Project Report
+<a href="https://github.com/Sandun01/ICAF-Conference_Management_System/blob/dev/2021S1_REG_WE_38%20.pdf">Project Report</a>
 
 Live Preview
 Link: https://icaf-conference-management.herokuapp.com/
