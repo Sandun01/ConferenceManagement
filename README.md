@@ -20,3 +20,9 @@ Link: https://icaf-conference-management.herokuapp.com/
 
 <img src="frontend/public/images/logo.png">
 <hr>
+
+## User Interfaces
+
+### Home Page
+![]("project_documents/gifs/1.gif")
+<hr>
