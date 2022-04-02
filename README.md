@@ -24,9 +24,13 @@ Link: https://icaf-conference-management.herokuapp.com/
 ## User Interfaces
 
 ### Home Page
-<img src="project_documents/gifs/1.gif">
+<video width="1920" height="1080" controls>
+  <source src="project_documents/videos/1.gif" type="video/mp4">
+</video>
 
 ### Other Public Pages
-<img src="project_documents/gifs/2.gif">
+<video width="1920" height="1080" controls>
+  <source src="project_documents/videos/2.gif" type="video/mp4">
+</video>
 
 <hr>
