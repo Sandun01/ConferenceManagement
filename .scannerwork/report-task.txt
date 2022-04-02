@@ -1,0 +1,6 @@
+projectKey=AF_ICAF
+serverUrl=http://localhost:9000
+serverVersion=7.5.0.20543
+dashboardUrl=http://localhost:9000/dashboard?id=AF_ICAF
+ceTaskId=AXyEER_4MKcl5m1LzMy1
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXyEER_4MKcl5m1LzMy1
