@@ -3,7 +3,7 @@
 ## Project Details
 
 Author: 2021S1_REG_WE_38<br>
-<a href="https://github.com/Sandun01/ICAF-Conference_Management_System/blob/dev/User%20Guide%20-%20CreativeAF_2021S1_REG_WE_38.pdf">
+<a href="https://github.com/Sandun01/ICAF-Conference_Management_System/blob/dev/project_documents/User%20Guide%20-%20CreativeAF_2021S1_REG_WE_38.pdf">
 User Guide
 </a>
 <br>
