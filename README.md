@@ -24,5 +24,5 @@ Link: https://icaf-conference-management.herokuapp.com/
 ## User Interfaces
 
 ### Home Page
-![]("project_documents/gifs/1.gif")
+<img src="project_documents/gifs/1.gif">
 <hr>
